@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/function.js"></script>
+    <title>Home</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <form class="form-signin">
+        <div class="imgcontainer">
+          <img src="../imgs/logo.JPG" style="width: 200px; height:150px" />
+        </div>
+        <button
+          class="btn btn-secondary"
+          style="font-size: 25px;"
+          onclick="GoForum()"
+          type="button"
+        >
+          Ver Foros
+        </button>
+
+        <button
+          class="btn btn-secondary"
+          style="font-size: 25px;"
+          onclick="GoActions()"
+          type="button"
+        >
+          Acciones
+        </button>
+
+        <button
+          class="btn btn-danger"
+          style="font-size: 25px;"
+          onclick="DoLogOut()"
+          type="button"
+        >
+          Log Out
+        </button>
+      </form>
+    </div>
+    <script>
+    
+    function GoForum(){
+        setTimeout(function()
+            {
+                //Update Local Storage Variable
+                localStorage.setItem("UserIsValid", '1');
+                //Redirect to HTML Page
+                window.location.href = "forum.html";
+            }, 1000);
+    }
+
+    function DoLogOut(){
+        setTimeout(function()
+            {
+                //Update Local Storage Variable
+                localStorage.setItem("UserIsValid", '0');
+                //Redirect to HTML Page
+                window.location.href = "login.html";
+            }, 1000);
+    }
+
+    
+    </script>
+  </body>
+</html>
