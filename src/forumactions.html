@@ -161,7 +161,6 @@
 
       function CreateArticle() {
         if (index == -1){
-            console.log("addd");
             var article = {
                 name: $("#article-name").val(),
                 description: $("#article-desc").val(),
@@ -200,13 +199,12 @@
             $("#article-desc").val('');
             $("#article-author").val('');
             index = -1;
+
             $("#largeModal").modal("hide");
             window.location.href = "forumactions.html";
             GetArticles();
 
-            console.log('editting');
         }       
-
       }
 
       function GetArticles() {
@@ -243,23 +241,17 @@
         $("#article-author").val(article.author);
         this.index = n;
         $('#createBtn').click();
-
       }
 
       
       function RemoveArticle(n) {
 
-        //$('#Article_'+n).remove();
-        console.log(ArticletList);
         ArticletList.splice(n, 1);
         localStorage.setItem("MyArticles", JSON.stringify(ArticletList));
         GetArticles();
 
         window.location.href = "forumactions.html";
         GetArticles();
-
-        console.log("doneee");
-
       }
 
       function Refresh() {
